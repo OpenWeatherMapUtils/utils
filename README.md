@@ -62,7 +62,7 @@ jupyter notebook
 
 ## Step 6: open and execute the Jupyter notebooks for `weather` and `air_pollution`
 
-Notebooks are weather.ipynb and air_pollution.ipynb
+Notebooks are `weather.ipynb` and `air_pollution.ipynb`
 
 ## Step 7: improve the Jupyter notebooks
 
