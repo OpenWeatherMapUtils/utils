@@ -25,15 +25,15 @@ export OWM_POI_LAT=45.5
 export OWM_POI_LON=5.5
 ```
 
-Fetch the weather history (one year, one file per week)
+Fetch the weather history (one year, one file per week) into the [`./weather`](./weather) directory :
 ```bash
-
+./fetch_weather_histories.sh
 gzip weather/*.json
 ```
 
-Fetch the air pollution history (one year, one file per month)
+Fetch the air pollution history (one year, one file per month) into the [`./air_pollution`](./air_pollution) directory :
 ```bash
-
+./fetch_air_pollution_histories.sh
 gzip air_pollution/*.json
 ```
 
