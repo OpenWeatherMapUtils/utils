@@ -1,10 +1,30 @@
 # Fetch Air Pollution (one file per month)
 # Author: Didier DONSEZ
 
+if [[ -z "${OWM_API_KEY}" ]]; then
+   echo "OWM_API_KEY is undefined"
+   exit
+fi
+
+if [[ -z "${OWM_POI_NAME}" ]]; then
+   echo "OWM_POI_NAME is undefined"
+   exit
+fi
+
+if [[ -z "${OWM_POI_LAT}" ]]; then
+   echo "OWM_POI_LAT is undefined"
+   exit
+fi
+
+if [[ -z "${OWM_POI_LON}" ]]; then
+   echo "OWM_POI_LON is undefined"
+   exit
+fi
+
 TYPE="air-pollution"
 
 # Student's API Key
-API_KEY=XXXXXXXXXXXXXXXXXXX
+API_KEY=${OWM_API_KEY}
 
 fetch_history() {
     LAT=$1
@@ -54,7 +74,5 @@ fetch_history $LAT $LON "$YEAR-05-01 00:00:00" "$YEAR-06-01 00:00:00" $POI-$YEAR
 
 }
 
-
-# Batiment IMAG
-fetch_poi IMAG 45.19038713118452 5.766778422455066
+fetch_poi ${OWM_POI_NAME} ${OWM_POI_LAT} ${OWM_POI_LON}
 

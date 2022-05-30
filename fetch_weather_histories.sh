@@ -1,10 +1,30 @@
 # Fetch Weather (one file per week)
 # Author: Didier DONSEZ
 
+if [[ -z "${OWM_API_KEY}" ]]; then
+   echo "OWM_API_KEY is undefined"
+   exit
+fi
+
+if [[ -z "${OWM_POI_NAME}" ]]; then
+   echo "OWM_POI_NAME is undefined"
+   exit
+fi
+
+if [[ -z "${OWM_POI_LAT}" ]]; then
+   echo "OWM_POI_LAT is undefined"
+   exit
+fi
+
+if [[ -z "${OWM_POI_LON}" ]]; then
+   echo "OWM_POI_LON is undefined"
+   exit
+fi
+
 TYPE="weather"
 
 # Student's API Key
-API_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+API_KEY=${OWM_API_KEY}
 
 
 fetch_history() {
@@ -23,7 +43,7 @@ POI=$1
 LAT=$2
 LON=$3
 
-FIRST=1622851200
+FIRST=$(date -v-365d +%s)
 
 START=$FIRST
 END=$(date -r $START -v+7d +%s)
@@ -40,6 +60,5 @@ done
 
 }
 
-# My Lab 
-fetch_poi_2 IMAG 45.19038713118452 5.766778422455066
+fetch_poi ${OWM_POI_NAME} ${OWM_POI_LAT} ${OWM_POI_LON}
 
