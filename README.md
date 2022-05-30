@@ -64,6 +64,8 @@ jupyter notebook
 
 Notebooks are `weather.ipynb` and `air_pollution.ipynb`
 
+![Temperature](temperature.jpg)
+
 ## Step 7: improve the Jupyter notebooks
 
 See the [gallery of `plotly` plots and charts](https://plotly.com/python/)
