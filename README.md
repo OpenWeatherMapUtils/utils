@@ -25,6 +25,7 @@ Get the latitude and the longitude of your hometown using [OpenStreetMap](https:
 Copy them in the current shell
 
 ```bash
+export OWM_POI_NAME=HOMETOWN
 export OWM_POI_LAT=45.5
 export OWM_POI_LON=5.5
 ```
